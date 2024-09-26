@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CadastroDeUsuário</title>
+    <style type="text/css">
+        *{
+            color: rgb(0, 0, 0);
+            background-color:  #368bd0;
+            font-family: 'Courier New', Courier, monospace ;
+            font-size: medium;
+        }
+        section#cad{
+            color: aliceblue;
+            background-color: rgb(21, 21, 105);
+
+            width: 700px; /* Largura */
+            height: 300px; /* Altura */
+            margin-left: auto; /* Margem Esquerda */
+            margin-right: auto; /* Margem Direita */
+            border: 20px solid rgb(21, 21, 105); /* Borda (Tamanho, Estilo e Cor) */
+            border-radius: 25px; /* Raio da Bordar */
+            display: grid;
+        }
+        h1.title{
+            color: aliceblue;
+            background-color: rgb(21, 21, 105);
+            font-family:Arial, Helvetica, sans-serif;
+            height: 25px;
+            line-height: 15px; /* Altura da Linha */
+            text-align: center; /* Alinhamento do Texto */
+
+        }
+        div#body{
+            color: aliceblue;
+            line-height: 25px;
+        }
+        button#submit{
+            background-color: aliceblue;
+            text-align: center;
+        }
+;
+    </style>
+</head>
+<body>
+    <main>
+        <section id = "cad", onclick="clicar()" >
+            <h1 class="title">Cadastro de Usuário</h1>
+            <div id="body" style="background-color: rgb(21,21,105);">
+                Nome: <br> <input type="text" name="Nome" id="Name" style="background-color: aliceblue;">
+                <br>
+                Telefone: <br> <input type="tel" name="Telefone" id="phone" style="background-color: aliceblue;">
+                <br>
+                Email: <br> <input type="email" name="Email" id="Email" style="background-color: aliceblue;">
+                <br>
+            </div>
+            <div id="Confirmar" style="background-color: rgb(21, 21, 105);">
+                <button type="submit" id="submit">Confirmar</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        /* var x = window.document.getElementById('Cad');
+        
+        function clicar(){
+            x.innerText = "Clicou!";
+            x.style.backgroundColor = 'green';
+        }
+        function entrou(){
+            x.innerText = "Entrou";
+            x.style.backgroundColor = 'red';
+        }
+        function sair(){
+            x.innerText = "Saiu";
+            x.style.backgroundColor = 'rgb(21, 21, 105)';
+        }
+
+        x.addEventListener('click', clicar);
+        x.addEventListener('mouseenter', entrou);
+        x.addEventListener('mouseout', sair);
+        */
+
+    </script>
+</body>
+</html>
