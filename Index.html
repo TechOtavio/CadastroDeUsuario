@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            color: aliceblue;
+            background-color: #368bd0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: medium;
+        }
+        section#Login {
+            color: aliceblue;
+            background-color: rgb(21, 21, 105);
+
+            width: 500px; /* Largura */
+            height: 300px; /* Altura */
+            margin-left: auto; /* Margem Esquerda */
+            margin-right: auto; /* Margem Direita */
+            border: 5px solid rgb(21, 21, 105); /* Borda (Tamanho, Estilo e Cor) */
+            border-radius: 10px; /* Raio da Bordar */
+            display: grid;
+        }
+        h1#title{
+            color: aliceblue;
+            background-color: rgb(21, 21, 105);
+            font-family:Arial, Helvetica, sans-serif;
+            height: 20px;
+            line-height: 15px; /* Altura da Linha */
+            text-align: center; /* Alinhamento do Texto */
+        }
+        form#Corpo{
+            background-color: rgb(21, 21, 105);
+            color: aliceblue;
+            line-height: auto;
+            margin: 10px 0px 0px 10px;
+        }
+        label{
+            background-color: rgb(21, 21, 105);
+            margin: 0px 0px 0px 10px;
+        }
+        input{
+            background-color: aliceblue;
+            color: rgb(21, 21, 105);
+            margin: 0px 0px 15px 10px;
+        }
+        button#Login{
+            background-color: aliceblue;
+            color: rgb(21, 21, 105);
+            margin: 40px 0px 0px 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section id="Login">
+            <h1 id="title">Login de Usuário</h1>
+            <form id="Corpo">
+                <label for="Email">Email: </label>
+                <br>
+                <input type="email" id="Email" name="Email" placeholder="Digite seu Email..." required>
+                <br>
+                <label for="Senha">Senha:</label>
+                <br>
+                <input type="password" name="Senha" id="Senha" placeholder="Digite sua Senha..." required>
+                <br>
+                <button type="submit" id="Login">Entrar</button>
+            </form>
+        </section>
+    </main>
+    
+    <script>
+    /*    document.getElementById('Corpo').addEventListener('Submit', async (c) => {
+            c.defaultPrevented(); // Desativa a ação padrão da página (Refresh)
+            const Email = document.getElementById('Email').value;
+            const Senha = document.getElementById('Senha').value;
+            
+            const data = {
+                    email: Email,
+                    password,
+            }
+
+            const response = await fetch('http://localhost:3000/usuarios/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+        })
+            */
+    </script>
+    
+</body>
+
+</html>

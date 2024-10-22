@@ -16,11 +16,11 @@
             background-color: rgb(21, 21, 105);
 
             width: 700px; /* Largura */
-            height: 300px; /* Altura */
+            height: 320px; /* Altura */
             margin-left: auto; /* Margem Esquerda */
             margin-right: auto; /* Margem Direita */
-            border: 20px solid rgb(21, 21, 105); /* Borda (Tamanho, Estilo e Cor) */
-            border-radius: 25px; /* Raio da Bordar */
+            border: 5px solid rgb(21, 21, 105); /* Borda (Tamanho, Estilo e Cor) */
+            border-radius: 10px; /* Raio da Bordar */
             display: grid;
         }
         h1.title{
@@ -28,11 +28,12 @@
             background-color: rgb(21, 21, 105);
             font-family:Arial, Helvetica, sans-serif;
             height: 25px;
-            line-height: 15px; /* Altura da Linha */
+            line-height: 30px; /* Altura da Linha */
             text-align: center; /* Alinhamento do Texto */
 
         }
         div#body{
+            background-color: rgb(21, 21, 105);
             color: aliceblue;
             line-height: 25px;
         }
@@ -40,48 +41,81 @@
             background-color: aliceblue;
             text-align: center;
         }
-;
+        form {
+            background-color: rgb(21, 21, 105);
+            margin: 10px 0px 30px 0px;
+        }
+
+        input {
+            background-color: aliceblue;
+            margin: 3px 0px 3px 0px;
+        }
+
+        label {
+            background-color: rgb(21, 21, 105);
+            color: white;
+        }
+
+        button {
+            background-color: aliceblue;
+            color: rgb(21, 21, 105);
+            margin: 30px 0px 0px 5px;
+        }
     </style>
 </head>
 <body>
     <main>
-        <section id = "cad", onclick="clicar()" >
+        <section id = "cad">
             <h1 class="title">Cadastro de Usuário</h1>
-            <div id="body" style="background-color: rgb(21,21,105);">
-                Nome: <br> <input type="text" name="Nome" id="Name" style="background-color: aliceblue;">
-                <br>
-                Telefone: <br> <input type="tel" name="Telefone" id="phone" style="background-color: aliceblue;">
-                <br>
-                Email: <br> <input type="email" name="Email" id="Email" style="background-color: aliceblue;">
-                <br>
-            </div>
-            <div id="Confirmar" style="background-color: rgb(21, 21, 105);">
-                <button type="submit" id="submit">Confirmar</button>
+            <div id="body">
+                <form id="Cadastro">
+                    <label for="name">Nome:</label>
+                    <br>
+                    <input type="text" name="name" id="name" placeholder="Digite seu Nome...">
+                    <br>
+                    <label for="email">Email:</label>
+                    <br>
+                    <input type="email" name="email" id="email" placeholder="Digite seu Email...">
+                    <br>
+                    <label for="age">Idade:</label>
+                    <br>
+                    <input type="text" name="age" id="age" placeholder="Digite seu Idade...">
+                    <br>
+                    <button type="submit">Cadastrar</button>
+                </form>
             </div>
         </section>
     </main>
 
     <script>
-        /* var x = window.document.getElementById('Cad');
-        
-        function clicar(){
-            x.innerText = "Clicou!";
-            x.style.backgroundColor = 'green';
-        }
-        function entrou(){
-            x.innerText = "Entrou";
-            x.style.backgroundColor = 'red';
-        }
-        function sair(){
-            x.innerText = "Saiu";
-            x.style.backgroundColor = 'rgb(21, 21, 105)';
-        }
+        document.getElementById('Cadastro').addEventListener('submit', async (c) => {
+            c.preventDefault();
+            const Nome = document.getElementById('name').value;
+            const Age = document.getElementById('age').value;
+            const Email = document.getElementById('email').value;
 
-        x.addEventListener('click', clicar);
-        x.addEventListener('mouseenter', entrou);
-        x.addEventListener('mouseout', sair);
-        */
+            const data = {
+                email: Email,
+                nome: Nome,
+                idade: Age
+            }
 
+            const response = await fetch('http://localhost:3000/cria-usuarios', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert('Usuário cadastrado com sucesso!');
+            } else {
+                const errorData = await response.json();
+                console.error('Erro ao cadastrar:', errorData);
+                alert('Erro ao cadastrar usuário.');
+            }
+        });
     </script>
 </body>
 </html>
