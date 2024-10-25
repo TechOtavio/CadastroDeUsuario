@@ -61,6 +61,8 @@ rotas.delete('/usuarios/:id', async (request, response) => {
     response.status(200).json({ message: 'Usuario deletado com sucesso!' })
 });
 
+rotas.listen(3000);
+
 /*rotas.post('/usuarios/login', async (request, response) => {
 
     const user = await prisma.user.findUnique({
@@ -72,8 +74,6 @@ rotas.delete('/usuarios/:id', async (request, response) => {
         console.log(user);
     }
 })
-
-rotas.listen(3000);
 
 /*
                     REQUEST´S
