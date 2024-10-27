@@ -6,7 +6,7 @@ Estou me familiarizando com o framework express junto do node espero utiliza-los
 ## Caminho de instalação do Express
 Antes de instalar, baixe e instale o Node.js.
 Se este for um projeto totalmente novo, certifique-se de criar um package.jsonprimeiro use o comando:
-*$npm initcomando*
+<p>*$npm initcomando*</p>
 
 A instalação do Express é feita usando o npm installcomando:
-*$npm instalar expresso*
+<p>*$npm instalar expresso**</p>
